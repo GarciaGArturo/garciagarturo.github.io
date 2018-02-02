@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: BlankTemplate-B4/assets/favicons/
+Disallow: BlankTemplate-B4/assets/short/
+
+Allow: BlankTemplate-B4/assets/images/
