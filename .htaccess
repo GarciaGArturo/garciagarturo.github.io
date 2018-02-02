@@ -1,0 +1,3 @@
+ErrorDocument 500 "Houston, we have a problem."
+ErrorDocument 401 "401"
+ErrorDocument 404 "Ouch!!"
