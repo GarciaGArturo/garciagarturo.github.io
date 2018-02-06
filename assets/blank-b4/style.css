@@ -1,0 +1,39 @@
+body {
+  font-weight: 300;
+  }
+.logo {
+  font-size: 1.5rem;
+  font-weight: normal;
+  }
+.logo img {
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  }
+.logo:hover {
+  text-decoration: none;
+  }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+  }
+.jumbotron {
+  background-image: url(https://raw.githubusercontent.com/GarciaGArturo/BlankTemplate-B4/master/assets/images/arena-blanca.jpg);
+  background-size: cover;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0;
+  }
+.quote {
+ /* margin-top: -45px;*/
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 3px;
+  z-index: 10;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, 0.32)
+  }
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display:none;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
