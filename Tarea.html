@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarea</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>8-10 minutos<br>
+Objetivo</p>
+<p>Crear un nuevo repositorio de trabajo vacío de nombre <strong>my_repo</strong> en un directorio local y realizar en él un pequeño desarrollo de software.</p>
+<p>Este consiste en programar una calculadora con 2 botones (x^3 y x^4), introduciendo cada botón en un commit diferente de la rama master (siguiendo los pasos indicados en: Desarrollo de la práctica).</p>
+<p>El primer commit debe incluir además un fichero <a href="http://README.md">README.md</a>, tal y como se indica en: <em>Desarrollo de la práctica.</em></p>
+<p>Crear también una rama de nombre <strong>sine</strong>, que comience en el primer commit y añada a la calculadora (que solo tiene el botón x^3 en ese commit), un nuevo botón sin(x) que calcule el seno del número.</p>
+<p>Integrar ambas ramas con merge y subir el proyecto con sus dos ramas (master y sine) a un repositorio vacío, creado en su cuenta de GitHub con el mismo nombre: <strong>my_repo</strong>.</p>
+<p>El nombre del usuario en Github debe incluir el nombre y apellidos, o las iniciales de la persona que realiza la entrega.<br>
+Desarrollo de la práctica</p>
+<p>Seguir los siguientes pasos para la realización de esta práctica.</p>
+<h2 id="pasos">Pasos</h2>
+<ul>
+<li><strong>Paso 1)</strong> Crear un repositorio local vacío de trabajo, llamado my_repo, para realizar el desarrollo que se describe a continuación.</li>
+</ul>
+<h4 id="sugerencia-de-comandos-a-utilizar">Sugerencia de comandos a utilizar</h4>
+<p>$ git init (Crea un repositorio git en el directorio actual)</p>
+<p>$ git init my_repo (Crea un nuevo directorio llamado <strong>my_repo</strong> con su repositorio git)</p>
+<ul>
+<li><strong>Paso 2)</strong> Añadir al directorio de trabajo creado los dos siguientes ficheros.</li>
+<li></li>
+</ul>
+<ol>
+<li>Un primer fichero llamado <a href="http://README.md">README.md</a> con el siguiente contenido:</li>
+</ol>
+<p><code>“Primer fichero en el primer repositorio de &lt;nombre apellidos&gt;”</code></p>
+<ol start="2">
+<li>Un segundo fichero de nombre <code>calculator.html</code> que implemente una calculadora con el botón de x^3 con el siguiente código:</li>
+</ol>
+<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;
+
+&lt;title&gt;Calculator&lt;/title&gt;&lt;meta charset="utf-8"&gt;
+
+&lt;script type="text/javascript"&gt;
+
+function cube() {
+
+var num = document.getElementById("n1");
+
+num.value = Math.pow(num.value, 3);
+
+}
+
+&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+Number:
+
+&lt;input type="text" id="n1"&gt;&lt;p&gt;
+
+&lt;button onclick="cube()"&gt; x^3 &lt;/button&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>A este código hay que añadirle debajo de la marca , una línea con el siguiente título HTML:</p>
+<pre><code>&lt;h1&gt;Calculadora de ……su nombre y apellidos……&lt;/h1&gt;
+</code></pre>
+<h4 id="sugerencia-de-comandos-a-utilizar-además-del-editor">Sugerencia de comandos a utilizar además del editor:</h4>
+<p>$ cd mi_repo (Para entrar en el directorio de trabajo)</p>
+<p>$ git status (Para conocer el estado de los ficheros)</p>
+<p>$ git log --oneline (Para mostrar la historia de commits en formato corto)</p>
+<ol start="3">
+<li><strong>Paso 3)</strong> Registrar los ficheros en el índice y crear el primer commit en la rama master</li>
+</ol>
+<h4 id="sugerencia-de-comandos-a-utilizar-1">Sugerencia de comandos a utilizar:</h4>
+<p>$ git add <code>&lt;fichero1&gt; &lt;fichero2&gt;</code> …</p>
+<p>$ git commit -m “x^3 button”</p>
+<ol start="4">
+<li><strong>Paso 4)</strong> Modificar el fichero <em>calculator.html</em> para añadir un segundo botón a la calculadora que eleve un número a la cuarta potencia (x^4) y cerrar un segundo commit en la rama master.</li>
+</ol>
+<p>Sugerencia de comandos a utilizar:</p>
+<p>$ git status -s (muestra el estado de los ficheros)</p>
+<p>$ git log --oneline (muestra la historia de commits en formato corto)</p>
+<p>$ git diff …. (muestra las diferencias con el commit anterior antes y después de cerrarlo)</p>
+<p>$ git add . (registra todos los ficheros nuevos o modificados en el índice)</p>
+<p>$ git commit -m “x^4 button” (cierra el commit, añadiéndole el mensaje indicado)</p>
+<ol start="5">
+<li><strong>Paso 5)</strong> Crear una rama de nombre sine que comience en el primer commit (con mensaje “x^3 button”) y restaurarla en el directorio de trabajo.</li>
+</ol>
+<h4 id="sugerencia-de-comandos-a-utilizar-2">Sugerencia de comandos a utilizar:</h4>
+<p>$ git branch -v (muestra las ramas existentes en el repositorio)</p>
+<p>$ git checkout -b sine &lt;id_de_commit&gt; (Crea rama en commit indicado y realiza checkout a rama).</p>
+<ol start="6">
+<li><strong>Paso 6)</strong> Modificar en la rama <strong>sine</strong> el fichero <em>calculator.html</em> del directorio de trabajo añadiendo un segundo botón al commit de la calculadora que solo tiene el botón x^3. El nuevo botón debe calcular el seno de un número (sin(x)).</li>
+</ol>
+<p>Una vez añadido el nuevo botón a la calculadora de la rama sine, registrar el fichero modificado <em>calculator.html</em> en el índice y crear un nuevo commit en la rama <strong>sine</strong>.</p>
+<h4 id="sugerencia-de-comandos-a-utilizar-3">Sugerencia de comandos a utilizar:</h4>
+<p>$ git branch -v (muestra las ramas existentes en el repositorio)</p>
+<p>$ git status -s (muestra el estado de los ficheros)</p>
+<p>$ git log --oneline (muestra la historia de commits)</p>
+<p>$ git diff …… (muestra las diferencias con el commit anterior antes y después de cerrarlo)</p>
+<p>$ git add . (registra todos los ficheros nuevos o modificados en el índice)</p>
+<p>$ git commit -m “sin(x) button” (cierra el commit, añadiéndole el mensaje indicado)</p>
+<p>$ git log --oneline --all (Para mostrar la historia de todas las ramas en formato corto)</p>
+<ol start="7">
+<li><strong>Paso 7)</strong> Integrar la rama master en la rama sine con el comando git merge master. La integración tiene conflictos, que se deben resolver con el editor. Una vez resueltos, debe finalizar la integración (merge) creando el commit de integración con git commit …</li>
+</ol>
+<h4 id="sugerencia-de-comandos-de-git-a-utilizar">Sugerencia de comandos de git a utilizar:</h4>
+<p>$ git merge master (ejecutar este comando estando en la rama sine)</p>
+<p>$ git status -s (para ver los ficheros con conflictos despees de integrar las ramas)</p>
+<p>$ git diff xxx (para ver diferencias en el fichero xxx)</p>
+<p>$ git add . (para registrar ficheros modificados en el índice)</p>
+<p>$ git commit -m “integrate master” (para finalizar la integración cerrando el commit)</p>
+<p>$ git log --oneline --graph (Para mostrar la historia de integraciones de la rama)</p>
+<ol start="8">
+<li><strong>Paso 8)</strong> Integrar el commit de integración de la rama sine en la rama master con el comando <code>git merge master</code>. Como el grafo de commits indica que la integración se ha realizado ya en la rama sine, git realiza la integración con Fast-Forward, reutilizando el commit ya generado en la integración del punto anterior y simplemente avanza el puntero de rama a dicho commit.</li>
+</ol>
+<h4 id="sugerencia-de-comandos-de-git-a-utilizar-1">Sugerencia de comandos de git a utilizar:</h4>
+<p>$ git merge sine (ejecutar este comando estando en la rama master)</p>
+<p>$ git log --oneline --graph --all (Para mostrar la historia de integraciones de todas las ramas)</p>
+<ol start="9">
+<li>
+<p><strong>Paso 9)</strong> Crear una cuenta en GitHub que incluya su nombre y apellidos (o sus iniciales) en el nombre de la cuenta. Si ya tiene una cuenta con estos requisitos puede utilizarla.</p>
+</li>
+<li>
+<p><strong>Paso 10)</strong> Crear en la cuenta de GitHub anterior un repositorio vacío de nombre <strong>my_repo</strong>.</p>
+</li>
+<li>
+<p><strong>Paso 11)</strong> Subir todas las ramas del repositorio local al nuevo repositorio en GitHub.</p>
+</li>
+</ol>
+<h4 id="sugerencia-de-comandos-a-utilizar-4">Sugerencia de comandos a utilizar:</h4>
+<p>$ git push --all <a href="https://github.com/">https://github.com/</a>&lt;su_cuenta&gt;/my_repo</p>
+<h2 id="entrega-y-evaluación">Entrega y evaluación</h2>
+<p>La entrega consiste en subir a MiriadaX <strong>únicamente el nombre de su cuenta en GitHub donde ha subido el repositorio</strong> my_repo.</p>
+<p>El evaluador debe comprobar que la cuenta entregada es de la persona que realiza la entrega y que el repositorio my_repo de dicha cuenta tiene los commits indicados con el contenido especificado.</p>
+<h2 id="instrucciones-para-la-entrega.">Instrucciones para la Entrega.</h2>
+<p>Una vez finalizado el paso 11 debe entregar en MiriadaX solo el nombre de su cuenta en GitHub donde ha subido el repositorio my_repo.</p>
+<p>OJO! Recuerde que el nombre de la cuenta tiene que incluir su nombre y apellidos o sus iniciales.</p>
+<p>OJO! Compruebe bien que el nombre de su cuenta es correcto, porque una vez enviada la entrega, esta no se puede cambiar.</p>
+<p>Aunque se recomienda no hacerlo, el repositorio en GitHub podrán cambiarlo después de la entrega si han cometido algún error.</p>
+<h2 id="instrucciones-para-la-evaluación-por-pares.">Instrucciones para la evaluación por pares.</h2>
+<p>El evaluador debe comprobar que la entrega es correcta buscando en GitHub el nombre de cuenta entregado y comprobando que contiene el repositorio pedido con las características solicitadas.</p>
+<p>La inspección de los commits, ramas y ademas elementos del repositorio puede hacerse navegando en GitHub o clonando el repositorio en local e inspeccionando con Git.</p>
+<p>El objetivo de este curso es sacar el máximo provecho al trabajo que están dedicando, por lo que les recomendamos que utilicen la evaluación para ayudar a sus compañeros enviando comentarios sobre la corrección del código, su claridad, legibilidad, estructuración y documentación.</p>
+</div>
+</body>
+
+</html>
