@@ -90,12 +90,15 @@ $ git commit -m “x^3 button”
 Sugerencia de comandos a utilizar:
 
 $ git status -s (muestra el estado de los ficheros)
+
 $ git log --oneline (muestra la historia de commits en formato corto)
+
 $ git diff …. (muestra las diferencias con el commit anterior antes y después de cerrarlo)
+
 $ git add . (registra todos los ficheros nuevos o modificados en el índice)
+
 $ git commit -m “x^4 button” (cierra el commit, añadiéndole el mensaje indicado)
      
-
 5. **Paso 5)** Crear una rama de nombre sine que comience en el primer commit (con mensaje “x^3 button”) y restaurarla en el directorio de trabajo.
 
 #### Sugerencia de comandos a utilizar:
@@ -111,11 +114,17 @@ Una vez añadido el nuevo botón a la calculadora de la rama sine, registrar el 
 #### Sugerencia de comandos a utilizar:
 
 $ git branch -v (muestra las ramas existentes en el repositorio)
+
 $ git status -s (muestra el estado de los ficheros)
+
 $ git log --oneline (muestra la historia de commits)
+
 $ git diff ….. (muestra las diferencias con el commit anterior antes y después de cerrarlo)
+
 $ git add . (registra todos los ficheros nuevos o modificados en el índice)
+
 $ git commit -m “sin(x) button” (cierra el commit, añadiéndole el mensaje indicado)
+
 $ git log --oneline --all (Para mostrar la historia de todas las ramas en formato corto)
 
 7. **Paso 7)** Integrar la rama master en la rama sine con el comando git merge master. La integración tiene conflictos, que se deben resolver con el editor. Una vez resueltos, debe finalizar la integración (merge) creando el commit de integración con git commit …
@@ -123,10 +132,15 @@ $ git log --oneline --all (Para mostrar la historia de todas las ramas en format
 #### Sugerencia de comandos de git a utilizar:
 
 $ git merge master (ejecutar este comando estando en la rama sine)
+
 $ git status -s (para ver los ficheros con conflictos despees de integrar las ramas)
+
 $ git diff xxx (para ver diferencias en el fichero xxx)
+
 $ git add . (para registrar ficheros modificados en el índice)
+
 $ git commit -m “integrate master” (para finalizar la integración cerrando el commit)
+
 $ git log --oneline --graph (Para mostrar la historia de integraciones de la rama)
 
 8. **Paso 8)** Integrar el commit de integración de la rama sine en la rama master con el comando `git merge master`. Como el grafo de commits indica que la integración se ha realizado ya en la rama sine, git realiza la integración con Fast-Forward, reutilizando el commit ya generado en la integración del punto anterior y simplemente avanza el puntero de rama a dicho commit.
