@@ -1,61 +1,159 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Generador de Texto</title>
+    <title>Formulario de Mascotas Perdidas</title>
 </head>
 <body>
-    <h1>Generador de Texto</h1>
+    <h1>Formulario de Mascotas Perdidas</h1>
 
     <!-- Campos del formulario -->
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre"><br>
+    <label for="nombre-mascota">Nombre de mi mascota:</label>
+    <input type="text" id="nombre-mascota"><br>
 
-    <label for="edad">Edad:</label>
-    <input type="number" id="edad"><br>
-
-    <label for="hobby">Hobby:</label>
-    <select id="hobby">
-        <option value="Deportes">Deportes</option>
-        <option value="Música">Música</option>
-        <option value="Viajes">Viajes</option>
+    <label for="especie">Especie:</label>
+    <select id="especie">
+        <option value="perro">Perro</option>
+        <option value="gato">Gato</option>
+        <option value="ave">Ave</option>
+        <option value="conejo">Conejo</option>
+        <option value="otro">Otro</option>
     </select><br>
 
-    <!-- Casilla de texto en tiempo real -->
-    <h2>Texto Generado:</h2>
-    <textarea id="texto-generado" rows="4" cols="50" readonly></textarea>
+    <label>Género:</label>
+    <input type="checkbox" id="macho"> Macho
+    <input type="checkbox" id="hembra"> Hembra<br>
+
+    <label for="raza">Raza:</label>
+    <input type="text" id="raza"><br>
+
+    <label for="fecha-hora">Fecha y hora en que se extravió:</label>
+    <input type="text" id="fecha-hora"><br>
+
+    <label for="ultima-sighting">Se le vio por última vez:</label>
+    <input type="text" id="ultima-sighting"><br>
+
+    <label for="senas-particulares">Señas particulares:</label>
+    <textarea id="senas-particulares" rows="4" cols="50"></textarea><br>
+
+    <label>Traía puesto:</label>
+    <select id="traia-puesto" multiple>
+        <option value="collar">Collar</option>
+        <option value="placa-identificacion">Placa de Identificación</option>
+        <option value="paliacate">Paliacate</option>
+        <option value="sweater">Sweater</option>
+        <option value="ropa">Ropa</option>
+        <option value="otros">Otros</option>
+    </select><br>
+
+    <label>Carácter:</label>
+    <input type="radio" id="docil" name="caracter" value="dócil"> Dócil
+    <input type="radio" id="agresivo" name="caracter" value="agresivo(a)"> Agresivo(a)
+    <input type="radio" id="miedoso" name="caracter" value="miedoso"> Miedoso
+    <input type="radio" id="confiado" name="caracter" value="confiado"> Confiado<br>
+
+    <label for="telefono">Teléfono para recibir preguntas:</label>
+    <input type="tel" id="telefono"><br>
+
+    <label for="acepta-whatsapp">Acepta WhatsApp:</label>
+    <input type="radio" id="si-whatsapp" name="acepta-whatsapp" value="si"> Sí
+    <input type="radio" id="no-whatsapp" name="acepta-whatsapp" value="no"> No<br>
+
+    <label for="nombre-contacto">Su nombre:</label>
+    <input type="text" id="nombre-contacto"><br>
+
+    <label>Recompensa:</label>
+    <input type="radio" id="si-recompensa" name="recompensa" value="si"> Sí
+    <input type="radio" id="no-recompensa" name="recompensa" value="no"> No<br>
+
+    <label for="comentarios">Comentarios extra:</label>
+    <textarea id="comentarios" rows="4" cols="50"></textarea><br>
 
     <!-- Botón para copiar al portapapeles -->
     <button id="copiar">Copiar al Portapapeles</button>
 
     <script>
         // Obtener elementos del formulario
-        const nombreInput = document.getElementById("nombre");
-        const edadInput = document.getElementById("edad");
-        const hobbySelect = document.getElementById("hobby");
-        const textoGenerado = document.getElementById("texto-generado");
+        const nombreMascotaInput = document.getElementById("nombre-mascota");
+        const especieSelect = document.getElementById("especie");
+        const machoCheckbox = document.getElementById("macho");
+        const hembraCheckbox = document.getElementById("hembra");
+        const razaInput = document.getElementById("raza");
+        const fechaHoraInput = document.getElementById("fecha-hora");
+        const ultimaSightingInput = document.getElementById("ultima-sighting");
+        const senasParticularesTextarea = document.getElementById("senas-particulares");
+        const traiaPuestoSelect = document.getElementById("traia-puesto");
+        const docilRadio = document.getElementById("docil");
+        const agresivoRadio = document.getElementById("agresivo");
+        const miedosoRadio = document.getElementById("miedoso");
+        const confiadoRadio = document.getElementById("confiado");
+        const telefonoInput = document.getElementById("telefono");
+        const siWhatsappRadio = document.getElementById("si-whatsapp");
+        const noWhatsappRadio = document.getElementById("no-whatsapp");
+        const nombreContactoInput = document.getElementById("nombre-contacto");
+        const siRecompensaRadio = document.getElementById("si-recompensa");
+        const noRecompensaRadio = document.getElementById("no-recompensa");
+        const comentariosTextarea = document.getElementById("comentarios");
         const copiarButton = document.getElementById("copiar");
+
+        // Función para generar el texto con los datos del formulario
+        function generarTexto() {
+            let textoGenerado = `Nombre de mi mascota: ${nombreMascotaInput.value}\n`;
+            textoGenerado += `Especie: ${especieSelect.value}\n`;
+            textoGenerado += `Género: ${machoCheckbox.checked ? 'Macho' : ''} ${hembraCheckbox.checked ? 'Hembra' : ''}\n`;
+            textoGenerado += `Raza: ${razaInput.value}\n`;
+            textoGenerado += `Fecha y hora en que se extravió: ${fechaHoraInput.value}\n`;
+            textoGenerado += `Se le vio por última vez: ${ultimaSightingInput.value}\n`;
+            textoGenerado += `Señas particulares: ${senasParticularesTextarea.value}\n`;
+            textoGenerado += `Traía puesto: ${Array.from(traiaPuestoSelect.selectedOptions).map(option => option.value).join(', ')}\n`;
+            textoGenerado += `Carácter: ${docilRadio.checked ? 'Dócil' : ''} ${agresivoRadio.checked ? 'Agresivo(a)' : ''} ${miedosoRadio.checked ? 'Miedoso' : ''} ${confiadoRadio.checked ? 'Confiado' : ''}\n`;
+            textoGenerado += `Teléfono para recibir preguntas: ${telefonoInput.value}\n`;
+            textoGenerado += `Acepta WhatsApp: ${siWhatsappRadio.checked ? 'Sí' : 'No'}\n`;
+            textoGenerado += `Su nombre: ${nombreContactoInput.value}\n`;
+            textoGenerado += `Recompensa: ${siRecompensaRadio.checked ? 'Sí' : 'No'}\n`;
+            textoGenerado += `Comentarios extra: ${comentariosTextarea.value}\n`;
+
+            return textoGenerado;
+        }
 
         // Actualizar el texto generado en tiempo real
         function actualizarTextoGenerado() {
-            const nombre = nombreInput.value;
-            const edad = edadInput.value;
-            const hobby = hobbySelect.value;
-
-            const texto = `Hola, mi nombre es ${nombre}, tengo ${edad} años y mi hobby es ${hobby}.`;
-            textoGenerado.value = texto;
+            const texto = generarTexto();
+            document.getElementById("texto-generado").value = texto;
         }
 
         // Copiar el texto generado al portapapeles
         copiarButton.addEventListener("click", () => {
-            textoGenerado.select();
+            const texto = generarTexto();
+            const textArea = document.createElement("textarea");
+            textArea.value = texto;
+            document.body.appendChild(textArea);
+            textArea.select();
             document.execCommand("copy");
+            document.body.removeChild(textArea);
             alert("Texto copiado al portapapeles");
         });
 
         // Escuchar cambios en los campos del formulario
-        nombreInput.addEventListener("input", actualizarTextoGenerado);
-        edadInput.addEventListener("input", actualizarTextoGenerado);
-        hobbySelect.addEventListener("change", actualizarTextoGenerado);
+        nombreMascotaInput.addEventListener("input", actualizarTextoGenerado);
+        especieSelect.addEventListener("change", actualizarTextoGenerado);
+        machoCheckbox.addEventListener("change", actualizarTextoGenerado);
+        hembraCheckbox.addEventListener("change", actualizarTextoGenerado);
+        razaInput.addEventListener("input", actualizarTextoGenerado);
+        fechaHoraInput.addEventListener("input", actualizarTextoGenerado);
+        ultimaSightingInput.addEventListener("input", actualizarTextoGenerado);
+        senasParticularesTextarea.addEventListener("input", actualizarTextoGenerado);
+        traiaPuestoSelect.addEventListener("change", actualizarTextoGenerado);
+        docilRadio.addEventListener("change", actualizarTextoGenerado);
+        agresivoRadio.addEventListener("change", actualizarTextoGenerado);
+        miedosoRadio.addEventListener("change", actualizarTextoGenerado);
+        confiadoRadio.addEventListener("change", actualizarTextoGenerado);
+        telefonoInput.addEventListener("input", actualizarTextoGenerado);
+        siWhatsappRadio.addEventListener("change", actualizarTextoGenerado);
+        noWhatsappRadio.addEventListener("change", actualizarTextoGenerado);
+        nombreContactoInput.addEventListener("input", actualizarTextoGenerado);
+        siRecompensaRadio.addEventListener("change", actualizarTextoGenerado);
+        noRecompensaRadio.addEventListener("change", actualizarTextoGenerado);
+        comentariosTextarea.addEventListener("input", actualizarTextoGenerado);
     </script>
 </body>
 </html>
